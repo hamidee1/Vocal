@@ -1,0 +1,21 @@
+# Vocal Separation App (Static Frontend for GitHub Pages)
+
+واجهة أمامية جاهزة للنشر على GitHub Pages لتطبيق فصل الصوتيات (Vocals/Instrumentals).تم تصميمها RTL بالعربية، ويمكن ربطها لاحقًا بباك-إند حقيقي عبر REST/WebSocket.
+
+## الميزات
+- صفحات: الرئيسية، الرفع، النتائج، الأسعار، خصوصية، شروط، و404.
+- تصميم داكن حديث ومتجاوب.
+- عناصر وصول (WCAG): تخطي للمحتوى، دلالات، aria-live للتقدم.
+- مشغل ديمو باستخدام WebAudio محليًا بدون خادم.
+
+## النشر (GitHub Pages)
+1. أنشئ Repository وادفع الملفات إلى الفرع `main`.
+2. من **Settings → Pages** اختر المصدر `main / root` ثم **Save**.
+3. رابط الموقع: `https://USERNAME.github.io/REPO`.
+
+## الربط مع API حقيقي لاحقًا
+- عدّل `scripts/config.js` لإضافة `API_BASE` وEndpoints.
+- في `upload.js` استبدل منطق الرفع الوهمي بمنطق presign/upload/queue.- في `player.js` اربط روابط المسارات الناتجة لتمكين التنزيلات.
+
+## الترخيص
+MIT

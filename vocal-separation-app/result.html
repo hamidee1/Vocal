@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>النتائج — Vocal Splitter</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">تخطي إلى المحتوى</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.svg" alt="" class="logo" aria-hidden="true" />
+        <span class="brand-name">Vocal Splitter</span>
+      </a>
+      <nav class="site-nav" aria-label="الملاحة الرئيسية">
+        <a href="index.html" class="nav-link">الرئيسية</a>
+        <a href="upload.html" class="nav-link">رفع ملف</a>
+        <a href="pricing.html" class="nav-link">الأسعار</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container wide">
+    <h1 class="page-title">نتيجة الفصل</h1>
+    <div class="grid-2">
+      <section class="card" aria-label="مشغل الصوت">
+        <h2 class="card-title">المعاينة</h2>
+        <div id="player" class="player">
+          <div class="player-controls">
+            <button id="playBtn" class="btn btn-primary">تشغيل</button>
+            <button id="stopBtn" class="btn btn-ghost">إيقاف</button>
+          </div>
+          <div class="stems">
+            <label class="stem"><input type="checkbox" id="vocalToggle" checked /> صوت (Vocal)</label>
+            <label class="stem"><input type="checkbox" id="instToggle" checked /> موسيقى (Instrumental)</label>
+          </div>
+          <div class="levels">
+            <label>مستوى الصوت: <input type="range" id="vocalGain" min="0" max="1" step="0.01" value="1" /></label>
+            <label>مستوى الموسيقى: <input type="range" id="instGain" min="0" max="1" step="0.01" value="1" /></label>
+          </div>
+        </div>
+        <p class="muted small">وضع العرض التجريبي: يتم توليد الصوت محليًا (بدون خادم).</p>
+      </section>
+
+      <section class="card" aria-label="التحميل">
+        <h2 class="card-title">التنزيل</h2>
+        <div class="export-grid">
+          <button class="btn btn-small" id="downloadVocal" disabled>تنزيل Vocal (WAV)</button>
+          <button class="btn btn-small" id="downloadInst" disabled>تنزيل Instrumental (WAV)</button>
+          <button class="btn btn-small" id="downloadZip" disabled>تنزيل الكل (ZIP)</button>
+        </div>
+        <p class="muted">سيتم تفعيل الأزرار عند ربط الواجهة بـ API حقيقي.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© 2025</span>
+    </div>
+  </footer>
+
+  <script src="scripts/utils.js"></script>
+  <script src="scripts/player.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>رفع ملف — Vocal Splitter</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">تخطي إلى المحتوى</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.svg" alt="" class="logo" aria-hidden="true" />
+        <span class="brand-name">Vocal Splitter</span>
+      </a>
+      <nav class="site-nav" aria-label="الملاحة الرئيسية">
+        <a href="index.html" class="nav-link">الرئيسية</a>
+        <a href="upload.html" class="nav-link is-active">رفع ملف</a>
+        <a href="pricing.html" class="nav-link">الأسعار</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container narrow">
+    <h1 class="page-title">ارفع ملفك</h1>
+    <form id="uploadForm" class="card" aria-label="نموذج رفع ملف صوتي">
+      <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="سحب وافلات أو انقر للاختيار">
+        <input id="fileInput" type="file" accept=".mp3,.wav,.flac,.aac,audio/*" hidden />
+        <p><strong>اسحب الملف هنا</strong> أو <span class="link">انقر للاختيار</span></p>
+        <p class="muted">الحد الأقصى: 150MB أو 15 دقيقة</p>
+      </div>
+
+      <div class="options-grid">
+        <label class="field">
+          <span class="label">الوضع</span>
+          <select id="preset">
+            <option value="fast">سريع (2 مسار)</option>
+            <option value="balanced">متوازن (جودة أفضل)</option>
+            <option value="hq">عالي الجودة (4/5 مسارات)</option>
+          </select>
+        </label>
+        <label class="field">
+          <span class="label">عدد المسارات</span>
+          <select id="stems">
+            <option value="2">2 (صوت/موسيقى)</option>
+            <option value="4">4 (صوت/درامز/باس/باقي)</option>
+            <option value="5">5 (صوت/درامز/باس/بيانو/باقي)</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="actions">
+        <button type="submit" class="btn btn-primary">ابدأ الفصل</button>
+        <a href="index.html" class="btn btn-ghost">رجوع</a>
+      </div>
+
+      <div id="progressWrap" class="progress-wrap hidden" aria-live="polite">
+        <div class="progress">
+          <div id="progressBar" class="bar" style="width:0%"></div>
+        </div>
+        <div id="progressText" class="progress-text">بدء الرفع…</div>
+      </div>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© 2025</span>
+    </div>
+  </footer>
+
+  <script src="scripts/config.js"></script>
+  <script src="scripts/utils.js"></script>
+  <script src="scripts/upload.js"></script>
+</body>
+</html>
