@@ -1,0 +1,83 @@
+/* Basic reset & variables */
+:root{
+  --bg:#0d0d10; --panel:#15151b; --muted:#9aa4b2; --text:#f9fafb;
+  --primary:#635BFF; --primary-600:#5148ff; --primary-700:#3a30ff;
+  --danger:#ef4444; --radius:14px; --gap:16px; --shadow:0 10px 30px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; font-family:'Tajawal',system-ui,-apple-system,Segoe UI,Roboto;
+  background:radial-gradient(1200px 800px at 70% -10%,rgba(99,91,255,.12),transparent 60%), var(--bg);
+  color:var(--text); line-height:1.6;
+}
+a{color:var(--text)}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+.narrow{max-width:760px}
+.wide{max-width:1200px}
+.skip-link{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
+.skip-link:focus{position:static;width:auto;height:auto;background:#000;color:#fff;padding:8px 12px}
+
+.site-header{background:#101017;border-bottom:1px solid #1f2230; position:sticky; top:0; z-index:10}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)}
+.logo{width:32px;height:32px}
+.brand-name{font-weight:700}
+.site-nav{display:flex;gap:14px}
+.nav-link{padding:8px 10px;border-radius:8px;text-decoration:none;color:var(--text);opacity:.85}
+.nav-link:hover,.nav-link.is-active{background:#1a1c28;opacity:1}
+
+.hero{padding:70px 0 30px}
+.hero-title{font-size:36px;margin:0 0 10px}
+.accent{color:var(--primary)}
+.hero-sub{color:var(--muted);margin:0 0 20px}
+.hero-ctas{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:30px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid transparent;
+  padding:10px 16px;border-radius:10px;cursor:pointer;text-decoration:none;font-weight:600;box-shadow:var(--shadow);}
+.btn-primary{background:linear-gradient(135deg,var(--primary),var(--primary-700));}
+.btn-primary:hover{filter:brightness(1.05)}
+.btn-ghost{background:#171824;border-color:#2a2e44}
+.btn-small{padding:8px 12px;border-radius:8px}
+
+.demo-card,.card{background:linear-gradient(180deg,#161823,#121424); border:1px solid #272a40;border-radius:var(--radius); padding:20px; box-shadow:var(--shadow)}
+.section-title{margin:0 0 10px}
+.muted{color:var(--muted)}
+.small{font-size:.9rem}
+
+.how-it-works{padding:20px 0 60px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:var(--gap);counter-reset:st}
+.steps li{list-style:none;position:relative;padding:16px 16px 16px 52px;border:1px solid #26293d;border-radius:12px;background:#131625}
+.steps li::before{counter-increment:st;content:counter(st);position:absolute;left:16px;top:16px;width:28px;height:28px;display:grid;place-items:center;border-radius:50%;background:#222749;color:#cdd6f4}
+
+.site-footer{border-top:1px solid #1f2230;background:#0f1017;margin-top:40px}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
+.logo-sm{width:24px;height:24px;vertical-align:middle;margin-inline-end:8px}
+
+.page-title{margin:24px 0}
+.grid-2{display:grid;grid-template-columns:1.2fr .8fr;gap:var(--gap)}
+@media(max-width:900px){.grid-2{grid-template-columns:1fr}}
+
+.dropzone{display:grid;place-items:center;padding:40px;border:2px dashed #2d3250;border-radius:14px;background:#111423;cursor:pointer}
+.dropzone:focus{outline:2px solid var(--primary)}
+.link{color:var(--primary)}
+
+.options-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap);margin:16px 0}
+.field{display:grid;gap:6px}
+.label{color:#cbd5e1}
+select{background:#0f1220;color:var(--text);border:1px solid #262a44;border-radius:10px;padding:10px}
+
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+
+.progress-wrap{margin-top:16px}
+.progress{height:10px;background:#0f1120;border-radius:999px;overflow:hidden;border:1px solid #2a2e44}
+.progress .bar{height:100%;background:linear-gradient(90deg,var(--primary),var(--primary-700))}
+.progress-text{font-size:.95rem;color:#cbd5e1;margin-top:6px}
+
+.player-controls{display:flex;gap:10px;margin-bottom:12px}
+.stems{display:flex;gap:16px;margin:10px 0}
+.levels{display:grid;gap:8px}
+input[type="range"]{width:100%}
+
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--gap)}
+.plan.highlight{border:1px solid #494dff; box-shadow:0 8px 40px rgba(99,91,255,.15)}
